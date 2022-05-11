@@ -1,0 +1,8 @@
+# Kali Linux
+
+# Alias File Locations
+
+nano ~/.zshrc
+
+# My custom aliases
+alias hackwifi='sudo besside-ng wlan0'
