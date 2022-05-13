@@ -142,4 +142,3 @@ fi
 alias powershell='pwsh'
 alias ipconfig='ifconfig'
 alias ll='\ls -alF'
-alias documents='cd /mnt/c/Users/keenanm/Documents/'
