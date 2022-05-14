@@ -17,6 +17,4 @@ sudo chmod +x ~/.mycron.sh
 
 sudo echo "32 4 * * 0 ~/.mycron.sh" >> /etc/crontab
 
-sudo cp ~/.bashrc /root/.bashrc
-
 source ~/.bashrc
