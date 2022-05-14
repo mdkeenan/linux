@@ -35,8 +35,12 @@ sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/l
 # Download mycron.sh file that contains a list of regularly scheduled commands.
 sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -O /usr/local/src/mycron.sh
 
-# Make mycron.sh executable.
+# Download ocrap.sh file that contains a list of commands that are ran every hour.
+sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh -O /usr/local/src/ocrap.sh
+
+# Make mycron.sh and ocrap.sh executable.
 sudo chmod +x /usr/local/src/mycron.sh
+sudo chmod +x /usr/local/src/ocrap.sh
 
 # Check if the string "mycron" exists in the crontab file. If it does not then add the mycron.sh line to it.
 CRONY="/etc/crontab"
