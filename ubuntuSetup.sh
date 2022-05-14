@@ -10,13 +10,23 @@ sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
 sudo apt-get install -y -qq net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
 
 # Check if ~/.bashrc.original already exists. If it does not then make a copy of the original before change.
-RCBASH="/home/$USER/.bashrc.original"
+ROOTRCCOPY="/root/.bashrc.original"
+USERRCCOPY="/home/$USER/.bashrc.original"
 
-if test -f "$RCBASH"; then
-    :
+if  test "$USER" = "root"; then
+    if test -f "$ROOTRCCOPY"; then
+        :
+    else
+        echo "NOTE: $ROOTRCCOPY does not exist. Making copy of bashrc."
+        cp /root/.bashrc /root/.bashrc.original
+    fi
 else
-    echo "NOTE: $RCBASH does not exist. Making copy of bashrc."
-    cp /home/$USER/.bashrc /home/$USER/.bashrc.original
+    if test -f "$USERRCCOPY"; then
+        :
+    else
+        echo "NOTE: $USERRCCOPY does not exist. Making copy of bashrc."
+        cp /home/$USER/.bashrc /home/$USER/.bashrc.original
+    fi
 fi
 
 # Download and replace bashrc file for current user.
