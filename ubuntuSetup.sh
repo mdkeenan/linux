@@ -15,6 +15,12 @@ sudo wget -q https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -
 
 sudo chmod +x ~/.mycron.sh
 
-sudo echo "32 4 * * 0 ~/.mycron.sh" >> /etc/crontab
+File="/etc/crontab"
+
+if grep -q mycron "$File"; then
+    :
+else
+    echo "32 4 * * 0 ~/.mycron.sh" >> /etc/crontab
+fi
 
 source ~/.bashrc
