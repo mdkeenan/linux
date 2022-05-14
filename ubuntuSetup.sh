@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# run the following commented command to set up Ubuntu.
 # source <(curl -s https://raw.githubusercontent.com/mdkeenan/linux/master/ubuntuSetup.sh)
 
 sudo apt-get update && sudo apt-get -y upgrade
