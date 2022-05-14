@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# source <(curl -s https://raw.githubusercontent.com/mdkeenan/linux/master/ubuntu_setup.sh)
+
 sudo apt-get update -y && apt-get upgrade -y
 
 wget https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~./bashrc
