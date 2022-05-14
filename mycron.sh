@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo sudo apt-get update && sudo apt-get -y upgrade
+sudo apt update && sudo apt upgrade -y
