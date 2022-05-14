@@ -4,10 +4,10 @@
 # sudo apt-get install curl && source <(curl -s https://raw.githubusercontent.com/mdkeenan/linux/master/ubuntuSetup.sh)
 
 # Update and upgrade the system.
-sudo apt update && sudo apt upgrade -y -q
+sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
 
 # Install my commonly used packages.
-sudo apt-get install -y -q net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
+sudo apt-get install -y -qq net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
 
 # Check if ~/.bashrc.original already exists. If it does not then make a copy of the original before change.
 ORIG="~/.bashrc.original"
