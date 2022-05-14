@@ -8,4 +8,4 @@ sudo apt-get install -y net-tools build-essential curl wget mlocate git gnupg na
 
 wget https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~/.bashrc
 
-source ~./bashrc
+source ~/.bashrc
