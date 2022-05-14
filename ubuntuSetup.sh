@@ -13,7 +13,7 @@ sudo apt-get install -y net-tools build-essential curl wget mlocate git gnupg na
 ORIG="~/.bashrc.original"
 
 if test -f "$ORIG"; then
-    :
+    echo "bashrc.original does not exist. Making copy of original."
 else
     cp ~/.bashrc ~/.bashrc.original
 fi
@@ -31,7 +31,7 @@ sudo chmod +x ~/mycron.sh
 CRONY="/etc/crontab"
 
 if grep -q mycron "$CRONY"; then
-    :
+    echo "mycron.sh file not appended to crontab. Appending."
 else
     sudo echo "32 4 * * 0 ~/mycron.sh" >> /etc/crontab
 fi
