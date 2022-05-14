@@ -15,7 +15,7 @@ sudo wget -q https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -
 
 sudo chmod +x ~/.mycron.sh
 
-echo "32 4 * * 0 ~/.mycron.sh" >> /etc/crontab
+sudo echo "32 4 * * 0 ~/.mycron.sh" >> /etc/crontab
 
 sudo cp ~/.bashrc /root/.bashrc
 
