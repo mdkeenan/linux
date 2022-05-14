@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# source <(curl -s https://raw.githubusercontent.com/mdkeenan/linux/master/ubuntu_setup.sh)
+# source <(curl -s https://raw.githubusercontent.com/mdkeenan/linux/master/ubuntuSetup.sh)
 
 sudo apt-get update && sudo apt-get -y upgrade
 
