@@ -33,10 +33,10 @@ fi
 sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~/.bashrc
 
 # Download mycron.sh file that contains a list of regularly scheduled commands.
-sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -O ~/mycron.sh
+sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -O /usr/local/src/mycron.sh
 
 # Make mycron.sh executable.
-sudo chmod +x ~/mycron.sh
+sudo chmod +x /usr/local/src/mycron.sh
 
 # Check if the string "mycron" exists in the crontab file. If it does not then add the mycron.sh line to it.
 CRONY="/etc/crontab"
@@ -45,7 +45,7 @@ if grep -q mycron "$CRONY"; then
     :
 else
     echo "NOTE: ~/mycron.sh is not amended to crontab. Amending."
-    sudo echo "32 4 * * 0 ~/mycron.sh" >> /etc/crontab
+    sudo echo "32 4 * * 0 /usr/local/src/mycron.sh" >> /etc/crontab
 fi
 
 # Refresh bashrc
