@@ -30,10 +30,10 @@ else
 fi
 
 # Download and replace bashrc file for current user.
-sudo wget -q https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~/.bashrc
+sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~/.bashrc
 
 # Download mycron.sh file that contains a list of regularly scheduled commands.
-sudo wget -q https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -O ~/mycron.sh
+sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -O ~/mycron.sh
 
 # Make mycron.sh executable.
 sudo chmod +x ~/mycron.sh
