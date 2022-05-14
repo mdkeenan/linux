@@ -9,7 +9,13 @@ sudo apt-get install -y net-tools build-essential curl wget mlocate git gnupg na
 
 sudo cp ~/.bashrc ~/.bashrc.original
 
-wget -q https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~/.bashrc
+sudo wget -q https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~/.bashrc
+
+sudo wget -q https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -O ~/.mycron.sh
+
+sudo chmod +x ~/.mycron.sh
+
+echo "32 4 * * 0 ~/.mycron.sh" >> /etc/crontab
 
 sudo cp ~/.bashrc /root/.bashrc
 
