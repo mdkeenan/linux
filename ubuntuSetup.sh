@@ -45,7 +45,7 @@ if grep -q mycron "$CRONY"; then
     :
 else
     echo "NOTE: /usr/local/src/mycron.sh is not amended to crontab. Amending."
-    sudo echo "32 4 * * 0 /usr/local/src/mycron.sh" >> /etc/crontab
+    sudo echo "32 4 * * 0 root sh /usr/local/src/mycron.sh" >> /etc/crontab
 fi
 
 # Refresh bashrc
