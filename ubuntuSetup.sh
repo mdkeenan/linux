@@ -48,5 +48,15 @@ else
     sudo echo "32 4 * * 0 root sh /usr/local/src/mycron.sh" >> /etc/crontab
 fi
 
+# Check if the string "ocrap" exists in the crontab file. If it does not then add the ocrap.sh line to it.
+CRONY="/etc/crontab"
+
+if grep -q ocrap "$CRONY"; then
+    :
+else
+    echo "NOTE: /usr/local/src/ocrap.sh is not amended to crontab. Amending."
+    sudo echo "0 * * * * root sh /usr/local/src/ocrap.sh" >> /etc/crontab
+fi
+
 # Refresh bashrc
 source ~/.bashrc
