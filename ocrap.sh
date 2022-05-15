@@ -3,7 +3,7 @@
 # This will update from https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh every hour.
 # /etc/crontab 0 * * * * root sh /usr/local/src/ocrap.sh
 
-curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh -o /usr/local/src/ocrap.varsource
+curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh -o /usr/local/src/ocrap.varsource
 
 cp /usr/local/src/ocrap.sh /usr/local/src/ocrap.varlocal
 
@@ -21,3 +21,5 @@ fi
 
 rm /usr/local/src/ocrap.varsource
 rm /usr/local/src/ocrap.varlocal
+
+# Enter commands below this line.
