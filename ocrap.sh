@@ -13,9 +13,6 @@ OCRAPSUMLOCAL=$(sha256sum /usr/local/src/ocrap.varlocal)
 OCRAPSUMSOURCE2=$(echo $OCRAPSUMSOURCE | awk -F" " '{print $1}')
 OCRAPSUMLOCAL2=$(echo $OCRAPSUMLOCAL | awk -F" " '{print $1}')
 
-echo $OCRAPSUMSOURCE2
-echo $OCRAPSUMLOCAL2
-
 if test "$OCRAPSUMSOURCE2" = "$OCRAPSUMLOCAL2"; then
     :
 else
