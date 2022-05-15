@@ -19,8 +19,5 @@ else
     cp /usr/local/src/ocrap.varsource /usr/local/src/ocrap.sh
 fi
 
-# now=$(date +"%T")
-# echo "Updated: $now" >> /usr/local/src/ocrap
-
 rm /usr/local/src/ocrap.varsource
 rm /usr/local/src/ocrap.varlocal
