@@ -9,8 +9,8 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "Starting apt-get update and apt-get upgrade."
 # Update and upgrade the system.
-apt-get update -y
-apt-get upgrade -y
+sudo apt-get update -y
+suod apt-get upgrade -y
 
 echo "Finished apt-get update and apt-get upgrade."
 
