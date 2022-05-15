@@ -10,8 +10,11 @@ cp /usr/local/src/ocrap.sh /usr/local/src/ocrap.varlocal
 OCRAPSUMSOURCE=$(sha256sum /usr/local/src/ocrap.varsource)
 OCRAPSUMLOCAL=$(sha256sum /usr/local/src/ocrap.varlocal)
 
-echo $OCRAPSUMSOURCE
-echo $OCRAPSUMLOCAL
+OCRAPSUMSOURCE2=$(echo $OCRAPSUMSOURCE | awk -F" " '{print $1}')
+OCRAPSUMLOCAL2=$(echo $OCRAPSUMLOCAL | awk -F" " '{print $1}')
+
+echo $OCRAPSUMSOURCE2
+echo $OCRAPSUMLOCAL2
 
 now=$(date +"%T")
 echo "Updated: $now" >> /usr/local/src/ocrap
