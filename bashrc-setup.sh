@@ -25,3 +25,6 @@ fi
 
 # Download and replace bashrc file for current user.
 sudo curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -o ~/.bashrc
+
+# Refresh bashrc
+source ~/.bashrc
