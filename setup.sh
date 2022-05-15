@@ -13,8 +13,8 @@ sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
 sudo apt-get install --ignore-missing -qqy net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
 
 # Check if ~/.bashrc.original already exists. If it does not then make a copy of the original before change.
-ROOTRCCOPY="/root/.bashrc.original"
-USERRCCOPY="/home/$USER/.bashrc.original"
+export ROOTRCCOPY="/root/.bashrc.original"
+export USERRCCOPY="/home/$USER/.bashrc.original"
 
 if  test "$USER" = "root"; then
     if test -f "$ROOTRCCOPY"; then
@@ -48,7 +48,7 @@ sudo chmod +x /usr/local/src/mycron.sh
 sudo chmod +x /usr/local/src/ocrap.sh
 
 # Check if the string "mycron" exists in the crontab file. If it does not then add the mycron.sh line to it.
-CRONY="/etc/crontab"
+export CRONY="/etc/crontab"
 
 if grep -q mycron "$CRONY"; then
     :
@@ -58,7 +58,6 @@ else
 fi
 
 # Check if the string "ocrap" exists in the crontab file. If it does not then add the ocrap.sh line to it.
-CRONY="/etc/crontab"
 
 if grep -q ocrap "$CRONY"; then
     :
