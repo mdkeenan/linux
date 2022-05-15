@@ -26,4 +26,4 @@ rm /usr/local/src/mycron.varlocal
 
 # Enter commands below this line.
 
-# sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
+#  sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
