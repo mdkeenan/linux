@@ -1,22 +1,16 @@
 #!/bin/bash
 
 # Run the following commented command to set up Ubuntu.
-# sudo apt-get install curl && source <(curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/setup.sh)
+# sudo apt-get install curl && source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/setup.sh)
 
 # Update and upgrade the system.
 # sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
 
 # Set apt-get to non-interactive.
-export NEEDRESTART_MODE=a
 export DEBIAN_FRONTEND=noninteractive
-## Questions that you really, really need to see (or else). ##
-export DEBIAN_PRIORITY=critical
-apt-get -qy clean
-apt-get -qy update
-apt-get -qy -o "Dpkg::Options::=--force-confdef" -o "Dpkg::Options::=--force-confold" upgrade
 
 # Install my commonly used packages.
-sudo apt-get install -y -qq net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
+sudo apt-get install --ignore-missing -qqy net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
 
 # Check if ~/.bashrc.original already exists. If it does not then make a copy of the original before change.
 ROOTRCCOPY="/root/.bashrc.original"
@@ -39,15 +33,15 @@ else
 fi
 
 # Download and replace bashrc file for current user.
-sudo curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -o ~/.bashrc
+sudo curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -o ~/.bashrc
 # sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~/.bashrc
 
 # Download mycron.sh file that contains a list of regularly scheduled commands.
-sudo curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -o /usr/local/src/mycron.sh
+sudo curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -o /usr/local/src/mycron.sh
 # sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -O /usr/local/src/mycron.sh
 
 # Download ocrap.sh file that contains a list of commands that are ran every hour.
-sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh -O /usr/local/src/ocrap.sh
+sudo curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh -o /usr/local/src/ocrap.sh
 
 # Make mycron.sh and ocrap.sh executable.
 sudo chmod +x /usr/local/src/mycron.sh
