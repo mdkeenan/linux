@@ -7,7 +7,7 @@
 sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
 
 # Set apt-get to non-interactive.
-sudo DEBIAN_FRONTEND=noninteractive
+DEBIAN_FRONTEND=noninteractive
 
 # Install my commonly used packages.
 sudo apt-get install -y -qq net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
