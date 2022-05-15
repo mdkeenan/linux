@@ -16,7 +16,7 @@ OCRAPSUMLOCAL2=$(echo $OCRAPSUMLOCAL | awk -F" " '{print $1}')
 echo $OCRAPSUMSOURCE2
 echo $OCRAPSUMLOCAL2
 
-if [ "$OCRAPSUMSOURCE2" == "$OCRAPSUMLOCAL2" ]; then
+if test "$OCRAPSUMSOURCE2" = "$OCRAPSUMLOCAL2"; then
     :
 else
     cp /usr/local/src/ocrap.varsource /usr/local/src/ocrap.sh
