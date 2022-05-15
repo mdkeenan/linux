@@ -25,5 +25,5 @@ fi
 # now=$(date +"%T")
 # echo "Updated: $now" >> /usr/local/src/ocrap
 
-# rm /usr/local/src/ocrap.varsource
-# rm /usr/local/src/ocrap.varlocal
+rm /usr/local/src/ocrap.varsource
+rm /usr/local/src/ocrap.varlocal
