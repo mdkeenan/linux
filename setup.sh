@@ -16,7 +16,7 @@ echo "Finished apt-get update and apt-get upgrade."
 
 echo "Starting apt-get install common tools."
 # Install my commonly used packages.
-sudo apt-get install --ignore-missing -qqy net-tools openssh-server build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
+sudo apt-get install --ignore-missing -ym net-tools openssh-server build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
 
 echo "Finished apt-get install common tools."
 
