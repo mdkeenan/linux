@@ -7,10 +7,10 @@
 sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
 
 # Set apt-get to non-interactive.
-DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=noninteractive
 
 # Install my commonly used packages.
-sudo apt-get install -y -qq net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
+sudo apt-get install -y -f -qq net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
 
 # Check if ~/.bashrc.original already exists. If it does not then make a copy of the original before change.
 ROOTRCCOPY="/root/.bashrc.original"
