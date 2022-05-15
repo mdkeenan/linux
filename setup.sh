@@ -21,23 +21,23 @@ if  test "$USER" = "root"; then
         :
     else
         echo "NOTE: $ROOTRCCOPY does not exist. Making copy of bashrc."
-        cp /root/.bashrc /root/.bashrc.original
+        sudo cp /root/.bashrc /root/.bashrc.original
     fi
 else
     if test -f "$USERRCCOPY"; then
         :
     else
         echo "NOTE: $USERRCCOPY does not exist. Making copy of bashrc."
-        cp /home/$USER/.bashrc /home/$USER/.bashrc.original
+        sudo cp /home/$USER/.bashrc /home/$USER/.bashrc.original
     fi
 fi
 
 # Download and replace bashrc file for current user.
-curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -o ~/.bashrc
+sudo curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -o ~/.bashrc
 # sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~/.bashrc
 
 # Download mycron.sh file that contains a list of regularly scheduled commands.
-curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -o /usr/local/src/mycron.sh
+sudo curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -o /usr/local/src/mycron.sh
 # sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -O /usr/local/src/mycron.sh
 
 # Download ocrap.sh file that contains a list of commands that are ran every hour.
