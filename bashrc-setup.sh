@@ -11,14 +11,12 @@ if  test "$USER" = "root"; then
     if test -f "$ROOTRCCOPY"; then
         :
     else
-        echo "NOTE: $ROOTRCCOPY does not exist. Making copy of bashrc."
         sudo cp /root/.bashrc /root/.bashrc.original
     fi
 else
     if test -f "$USERRCCOPY"; then
         :
     else
-        echo "NOTE: $USERRCCOPY does not exist. Making copy of bashrc."
         sudo cp /home/$USER/.bashrc /home/$USER/.bashrc.original
     fi
 fi
