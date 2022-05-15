@@ -18,7 +18,7 @@ if  test -f "$MYCRONCOPY"; then
 elif test "$MYCRONSUMSOURCE2" = "$MYCRONSUMLOCAL2"; then
     :
 else
-    cp /usr/local/src/mycron.varsource /usr/local/src/mycron.sh
+    curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh
 fi
 
 rm /usr/local/src/mycron.varsource
