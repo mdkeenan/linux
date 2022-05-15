@@ -1,10 +1,10 @@
 #!/bin/bash
 
+# Update and upgrade the system.
+sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
+
 # Run the following commented command to set up Ubuntu.
 # sudo apt-get install curl && source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/setup.sh)
-
-# Update and upgrade the system.
-# sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
 
 # Set apt-get to non-interactive.
 export DEBIAN_FRONTEND=noninteractive
