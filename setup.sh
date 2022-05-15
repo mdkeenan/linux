@@ -4,13 +4,19 @@
 # sudo apt-get install curl && source <(curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/setup.sh)
 
 # Update and upgrade the system.
-sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
+# sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
 
 # Set apt-get to non-interactive.
+export NEEDRESTART_MODE=a
 export DEBIAN_FRONTEND=noninteractive
+## Questions that you really, really need to see (or else). ##
+export DEBIAN_PRIORITY=critical
+apt-get -qy clean
+apt-get -qy update
+apt-get -qy -o "Dpkg::Options::=--force-confdef" -o "Dpkg::Options::=--force-confold" upgrade
 
 # Install my commonly used packages.
-sudo apt-get install -y -f -qq net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
+sudo apt-get install -y -qq net-tools build-essential curl wget mlocate git gnupg nano tcpdump python3 python3-dev python3-pip libssl-dev libffi-dev open-vm-tools
 
 # Check if ~/.bashrc.original already exists. If it does not then make a copy of the original before change.
 ROOTRCCOPY="/root/.bashrc.original"
