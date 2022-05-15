@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run the following commented command to set up Ubuntu.
-# sudo apt-get install curl && source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/setup.sh)
+# sudo apt-get install --ignore-missing -qqy curl && source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/setup.sh)
 
 # Set apt-get to non-interactive.
 echo "Setting DEBIAN_FRONTEND to noninteractive".
