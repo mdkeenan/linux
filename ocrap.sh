@@ -21,5 +21,3 @@ fi
 
 rm /usr/local/src/ocrap.varsource
 rm /usr/local/src/ocrap.varlocal
-
-# Hehe
