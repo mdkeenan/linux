@@ -30,10 +30,12 @@ else
 fi
 
 # Download and replace bashrc file for current user.
-sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~/.bashrc
+curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -o ~/.bashrc
+# sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -O ~/.bashrc
 
 # Download mycron.sh file that contains a list of regularly scheduled commands.
-sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -O /usr/local/src/mycron.sh
+curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -o /usr/local/src/mycron.sh
+# sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -O /usr/local/src/mycron.sh
 
 # Download ocrap.sh file that contains a list of commands that are ran every hour.
 sudo wget -q --no-check-certificate https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh -O /usr/local/src/ocrap.sh
