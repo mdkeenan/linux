@@ -62,7 +62,7 @@ echo "Downloading ocrap.sh file and setting it as /usr/local/src/ocrap.sh"
 # Download ocrap.sh file that contains a list of commands that are ran every hour.
 sudo curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh -o /usr/local/src/ocrap.sh
 
-echo "Downloading ocrap.sh file and setting it as /usr/local/src/ocrap.sh"
+echo "Done downloading ocrap.sh file and setting it as /usr/local/src/ocrap.sh"
 
 echo "Making mycron.sh and ocrap.sh executable."
 
