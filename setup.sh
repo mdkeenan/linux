@@ -6,7 +6,7 @@
 # Update and upgrade the system.
 sudo apt-get update && sudo apt-get upgrade -y -qq > /dev/null
 
-# Set apt-get to non-interactive
+# Set apt-get to non-interactive.
 sudo DEBIAN_FRONTEND=noninteractive
 
 # Install my commonly used packages.
