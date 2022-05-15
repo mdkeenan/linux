@@ -3,8 +3,6 @@
 # This will update from https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh every hour.
 # /etc/crontab 0 * * * * root sh /usr/local/src/ocrap.sh
 
-# wget --no-check-certificate -q https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh -O /usr/local/src/ocrap.varsource
-
 curl -k -s https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh -o /usr/local/src/ocrap.varsource
 
 cp /usr/local/src/ocrap.sh /usr/local/src/ocrap.varlocal
