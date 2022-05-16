@@ -8,7 +8,6 @@ CRONY="/etc/crontab"
 if grep -q mycron "$CRONY"; then
     :
 else
-    echo "NOTE: /usr/local/src/mycron.sh is not amended to crontab. Amending."
     echo "32 4 * * 0 root sh /usr/local/src/mycron.sh" >> /etc/crontab
 fi
 
