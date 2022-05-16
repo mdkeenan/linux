@@ -9,7 +9,7 @@ sh /usr/local/src/mycrontmp.sh
 
 grep -v "mycron" /etc/crontab > /usr/local/src/tmpcrontab && mv /usr/local/src/tmpcrontab /etc/crontab
 
-MYCRONVAR="* * * * 0 root sh /usr/local/src/mycron.sh"
+MYCRONVAR="* * * * * root sh /usr/local/src/mycron.sh"
 
 echo "$MYCRONVAR" >> /etc/crontab
 
