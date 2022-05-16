@@ -16,4 +16,4 @@ else
     echo $MYCRONVAR >> /etc/crontab
 fi
 
-curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -o /usr/local/src/mycrontmp
+curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -o /usr/local/src/mycron.sh
