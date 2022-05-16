@@ -80,9 +80,9 @@ BWHT="\[\033[47m\]" # background white
 
 if [ "$color_prompt" = yes ]; then
     if [ "$USER" = root ]; then
-        PS1="$HC$FYEL[$FRED${debian_chroot:+($debian_chroot)}\u$FYEL:$FCYN\h$FYEL:$FBLE\W$FYEL]\\$ $RS"
+        PS1="$HC$FYEL[$RS\A$FYEL:$FRED${debian_chroot:+($debian_chroot)}\u$FYEL:$FCYN\h$FYEL:$FBLE\W$FYEL]\\$ $RS"
     else
-        PS1="$HC$FYEL[$FGRN${debian_chroot:+($debian_chroot)}\u$FYEL:$FCYN\h$FYEL:$FBLE\W$FYEL]\\$ $RS"
+        PS1="$HC$FYEL[$RS\A$FYEL:$FGRN${debian_chroot:+($debian_chroot)}\u$FYEL:$FCYN\h$FYEL:$FBLE\W$FYEL]\\$ $RS"
     fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u:\W\$ '
