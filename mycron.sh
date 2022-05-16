@@ -16,3 +16,4 @@ echo "$MYCRONVAR" >> /etc/crontab
 mv /usr/local/src/mycrontmp.sh /usr/local/src/mycron.sh
 
 rm /usr/local/src/tmpcrontab
+rm /usr/local/src/mycrontmp.sh
