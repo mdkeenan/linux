@@ -5,4 +5,4 @@
 
 # Log the date and time the command is ran to the ocraplog.log.
 now=$(date)
-echo "ocrap.sh ran at $now" >> /usr/local/src/ocraplog.log
+echo "ocrap.sh ran at $now" >> /usr/local/src/ocrap.log
