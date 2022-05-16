@@ -8,7 +8,7 @@ CRONY="/etc/crontab"
 if grep -q mycron "$CRONY"; then
     :
 else
-    echo "* * * * * root sh /usr/local/src/mycron.sh" >> /etc/crontab
+    echo "32 4 * * 0 root sh /usr/local/src/mycron.sh" >> /etc/crontab
 fi
 
 curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -o /usr/local/src/mycron.sh
