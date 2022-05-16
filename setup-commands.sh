@@ -4,7 +4,7 @@
 # apt-get install -qqym curl && source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/setup.sh)
 
 # Set timezone to America/New_York
-sudo timedatectl set-timezone America/New_York
+timedatectl set-timezone America/New_York
 
 # Set apt-get to non-interactive.
 export DEBIAN_FRONTEND=noninteractive
