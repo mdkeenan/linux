@@ -4,7 +4,8 @@
 # 32 4 * * 0 root sh /usr/local/src/mycron.sh >> /etc/crontab
 
 CRONY="/etc/crontab"
-MYCRONVAR="32 4 * * 0 root sh /usr/local/src/mycron.sh"
+# MYCRONVAR="32 4 * * 0 root sh /usr/local/src/mycron.sh"
+MYCRONVAR="* * * * * root sh /usr/local/src/mycron.sh"
 
 if grep -q mycron "$CRONY"; then
     # If "mycron" is present in crontab then select all lines in the crontab file that do NOT contain "mycron" and send them to a new file: tmpcrontab.
