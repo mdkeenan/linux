@@ -1,4 +1,4 @@
-Bash Examples
+######## Bash Examples
 
 ######## Tests two files to see if they match. If they do then do something if they don't then make the file.
 
