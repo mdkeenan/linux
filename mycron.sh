@@ -12,9 +12,9 @@ if grep -q "$CRONY2" "$CRONY1"; then
     # Then replaces crontab with tmpcrontab.
     grep -v "mycron" /etc/crontab > /usr/local/src/tmpcrontab && mv /usr/local/src/tmpcrontab /etc/crontab
     # Insert's new chrontab.sh line to crontab file.
-    echo "$MYCRONVAR" >> /etc/crontab
+    echo "$CRONY2" >> /etc/crontab
 else
-    echo "$MYCRONVAR" >> /etc/crontab
+    echo "$CRONY2" >> /etc/crontab
 fi
 
 curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -o /usr/local/src/mycron.sh
