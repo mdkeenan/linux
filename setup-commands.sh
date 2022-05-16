@@ -3,6 +3,9 @@
 # Run the following commented command AS ROOT to set up the system.
 # apt-get install -qqym curl && source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/setup.sh)
 
+# Set timezone to America/New_York
+sudo timedatectl set-timezone America/New_York
+
 # Set apt-get to non-interactive.
 echo "Setting DEBIAN_FRONTEND to noninteractive".
 export DEBIAN_FRONTEND=noninteractive
