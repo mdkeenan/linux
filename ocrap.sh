@@ -7,9 +7,6 @@
 curl curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap.sh -o /usr/local/src/ocraptmp.sh
 
 # Download latest version of ocrap-commands.sh.
-curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap-commands.sh -o /usr/local/src/ocrap-commands.sh
-
-# Run the commands in ocrap-commands.sh.
 source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/ocrap-commands.sh)
 
 # Replace old version of ocrap.sh with new version.
