@@ -4,6 +4,9 @@
 # source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc-setup.sh)
 
 # Check if ~/.bashrc.original already exists. If it does not then make a copy of the original before change. Also check to see which user is logged in and place bashrc file in the appropriate directory.
+
+sudo timedatectl set-timezone America/New_York
+
 ROOTRCCOPY="/root/.bashrc.original"
 USERRCCOPY="/home/$USER/.bashrc.original"
 
