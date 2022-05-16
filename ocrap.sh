@@ -24,3 +24,5 @@ rm /usr/local/src/ocrap.varlocal
 
 # Enter commands below this line.
 # Hello world
+
+echo "This happened" > /usr/local/src/happening.txt
