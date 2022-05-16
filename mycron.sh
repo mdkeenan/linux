@@ -12,4 +12,3 @@ else
 fi
 
 curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/mycron.sh -o /usr/local/src/mycron.sh
-# echo "32 4 * * 0 root sh /usr/local/src/mycron.sh" >> /etc/crontab
