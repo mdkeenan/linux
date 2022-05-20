@@ -2,7 +2,7 @@
 
 # Run the following commented command AS ROOT to set up Ubuntu.
 # sudo apt-get install -qqym curl && source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/setup.sh)
-
+# sudo apt-get install -qqym curl && curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/setup.sh | bash
 # If user is root download and run the commands in setup-commands.sh. If not then dont.
 if  test "$USER" = "root"; then
     apt-get install -qqym curl && source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/setup-commands.sh)
