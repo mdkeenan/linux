@@ -1,6 +1,8 @@
-######## Bash Examples
+#!/bin/bash
 
-######## Tests two files to see if they match. If they do then do something if they don't then make the file.
+# Bash Examples
+
+# Tests two files to see if they match. If they do then do something if they don't then make the file.
 
 OCRAPSUMSOURCE=$(sha256sum /usr/local/src/ocrap.varsource)
 OCRAPSUMLOCAL=$(sha256sum /usr/local/src/ocrap.varlocal)
@@ -13,3 +15,8 @@ if test "$OCRAPSUMSOURCE2" = "$OCRAPSUMLOCAL2"; then
 else
     cp /usr/local/src/ocrap.varsource /usr/local/src/ocrap.sh
 fi
+
+
+# Use grep to delete a line from a file.
+
+grep -v 'line to delete' testfile.txt > tmpfile && mv tmpfile testfile.txt
