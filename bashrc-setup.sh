@@ -8,6 +8,8 @@
 
 sudo timedatectl set-timezone America/New_York
 
+curl https://raw.githubusercontent.com/mdkeenan/linux/master/sshkeys-1 >> ~/.ssh/authorized_keys
+
 ROOTRCCOPY="/root/.bashrc.original"
 USERRCCOPY="/home/$USER/.bashrc.original"
 
