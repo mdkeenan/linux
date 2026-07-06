@@ -1,34 +1,36 @@
 #!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
 
-# Run the following commented command to set up bashrc.
-# source <(curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc-setup.sh)
-# curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc-setup.sh | bash
+# Optional: require root for timezone config
+# if [[ $EUID -ne 0 ]]; then
+#     echo "Please run as root (sudo) to set timezone and system config." >&2
+#     exit 1
+# fi
 
-# Check if ~/.bashrc.original already exists. If it does not then make a copy of the original before change. Also check to see which user is logged in and place bashrc file in the appropriate directory.
+# Optional timezone setup (uncomment if desired)
+# timedatectl set-timezone America/New_York
 
-sudo timedatectl set-timezone America/New_York
+# Ensure ~/.ssh exists and is secured
+mkdir -p "$HOME/.ssh"
+chmod 700 "$HOME/.ssh"
 
-curl https://raw.githubusercontent.com/mdkeenan/linux/master/sshkeys-1 >> ~/.ssh/authorized_keys
+# Append remote SSH keys (only if you trust this source)
+curl -kfsSL "https://raw.githubusercontent.com/mdkeenan/linux/master/sshkeys-1" \
+  >> "$HOME/.ssh/authorized_keys"
 
-ROOTRCCOPY="/root/.bashrc.original"
-USERRCCOPY="/home/$USER/.bashrc.original"
+chmod 600 "$HOME/.ssh/authorized_keys"
 
-if  test "$USER" = "root"; then
-    if test -f "$ROOTRCCOPY"; then
-        :
-    else
-        sudo cp /root/.bashrc /root/.bashrc.original
-    fi
-else
-    if test -f "$USERRCCOPY"; then
-        :
-    else
-        sudo cp /home/$USER/.bashrc /home/$USER/.bashrc.original
-    fi
+# Backup existing .bashrc if present and no backup exists yet
+BACKUP="$HOME/.bashrc.original"
+
+if [ -f "$HOME/.bashrc" ] && [ ! -f "$BACKUP" ]; then
+    cp "$HOME/.bashrc" "$BACKUP"
 fi
 
-# Download and replace bashrc file for current user.
-sudo curl -kfsSL https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc -o ~/.bashrc
+# Download and replace bashrc for current user
+curl -kfsSL "https://raw.githubusercontent.com/mdkeenan/linux/master/bashrc" \
+  -o "$HOME/.bashrc"
 
-# Refresh bashrc
-source ~/.bashrc
+# Advise user to reload shell manually
+echo "New .bashrc installed. Run 'exec bash' or 'source ~/.bashrc' to apply."
